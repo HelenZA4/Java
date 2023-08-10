@@ -20,6 +20,7 @@ public class DigitsNumber {
     }
 
     public static int getSumAllDigits(int i) {
+        i = Math.abs(i); // Использование абсолютного значения числа
         int sum = 0;
         while (i != 0) {
             // Суммирование всех цифр числа
@@ -30,6 +31,7 @@ public class DigitsNumber {
     }
 
     public static int getSumOddDigits(int j) {
+        j = Math.abs(j); // Использование абсолютного значения числа
         int sum = 0;
         while (j != 0) {
             // Суммирование нечетных цифр числа
@@ -43,11 +45,12 @@ public class DigitsNumber {
     }
 
     public static int getMaxDigit(int k) {
+        k = Math.abs(k); // Использование абсолютного значения числа
         int max = 0;
         while (k != 0) {
             // Нахождение максимальной цифры числа
             int digit = k % 10;
-            max = Math.max( max, digit);
+            max = Math.max(max, digit);
             k /= 10;
         }
         return max;
