@@ -7,7 +7,7 @@ public class DigitsNumber {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите целое число: ");
-        int number = scanner.nextInt();
+        int number = Math.abs(scanner.nextInt()); // Приводим число к значению по модулю
 
         int sumAllDigits = getSumAllDigits(number);
         System.out.println("Сумма всех цифр числа: " + sumAllDigits);
@@ -19,39 +19,36 @@ public class DigitsNumber {
         System.out.println("Максимальная цифра числа: " + maxDigit);
     }
 
-    public static int getSumAllDigits(int i) {
-        i = Math.abs(i); // Использование абсолютного значения числа
+    public static int getSumAllDigits(int number) {
         int sum = 0;
-        while (i != 0) {
+        while (number != 0) {
             // Суммирование всех цифр числа
-            sum += i % 10;
-            i /= 10;
+            sum += number % 10;
+            number /= 10;
         }
         return sum;
     }
 
-    public static int getSumOddDigits(int j) {
-        j = Math.abs(j); // Использование абсолютного значения числа
+    public static int getSumOddDigits(int number) {
         int sum = 0;
-        while (j != 0) {
+        while (number != 0) {
             // Суммирование нечетных цифр числа
-            int digit = j % 10;
+            int digit = number % 10;
             if (digit % 2 != 0) {
                 sum += digit;
             }
-            j /= 10;
+            number /= 10;
         }
         return sum;
     }
 
-    public static int getMaxDigit(int k) {
-        k = Math.abs(k); // Использование абсолютного значения числа
+    public static int getMaxDigit(int number) {
         int max = 0;
-        while (k != 0) {
+        while (number != 0) {
             // Нахождение максимальной цифры числа
-            int digit = k % 10;
+            int digit = number % 10;
             max = Math.max(max, digit);
-            k /= 10;
+            number /= 10;
         }
         return max;
     }
